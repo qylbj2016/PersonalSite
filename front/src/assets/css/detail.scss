@@ -1,0 +1,102 @@
+.detail-wrapper{
+    padding: 1em;
+    font-size: 1vw;
+    .show-tip{
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .article-item{
+        box-shadow: 1px 1px 1px 1px #666;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .title{
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 0.2em;
+        }
+        .aritcle-info{
+            margin: 0.5rem auto 0;
+            display: flex;
+            width: 60%;
+            font-size: 0.8rem;
+            justify-content: space-evenly;
+            &:nth-child(2){
+                .info-item:nth-of-type(2){
+                    @media screen and (max-width: 1250px){
+                        display: none;
+                     }
+                }
+                .info-item:nth-of-type(3){
+                    @media screen and (max-width: 990px){
+                        display: none;
+                     }
+                }
+                 @media screen and (max-width: 430px){
+                        display: none;
+                     }
+            }
+            &:nth-child(3){
+                .info-item:nth-of-type(2){
+                    @media screen and (max-width: 650px){
+                        display: none;
+                     }
+                }
+            }
+            .info-item{
+                color: #999;
+                text-align: center;
+                margin-right: 1rem;   
+                img{
+                    vertical-align: middle;
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    margin-right: 0.2rem;
+                    vertical-align: center;
+                }
+
+            }
+        }
+        .img-box{
+            box-sizing: border-box;
+            width: 80%;
+            padding: 0.5em;
+            margin: 0 auto 2em;
+            border: 1px solid #000;
+            img{
+               width: 100%;
+               height: auto;
+            }
+        }
+        .article{
+            margin-top: 1rem;
+            padding: 1em 3em;
+            font-size: 1.2em;
+            line-height: 1.2em;
+            word-wrap: break-word;
+            min-height: 400px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .like-wrapper{
+            width: 100%;
+            text-align: center;
+            display: flex;
+            margin-top: 3rem;
+            flex-direction: column;
+            .islike{
+                margin: 0 auto;
+                padding: 0.4rem;
+                width: 2rem;
+                border: 1px solid red;
+                cursor: pointer;
+            }
+            .like-show{
+                width: 10rem;
+                margin: 1.5rem auto;
+            }
+        }
+    }
+}

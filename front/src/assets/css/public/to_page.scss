@@ -1,0 +1,41 @@
+.toPage-wrapper{
+    height: 2rem;
+    display: flex;
+    margin: 4rem auto 2rem;
+    justify-content: center;
+    .btn{
+        height: 2rem;
+        width: 2rem;
+        background-position: center center;
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+    .pre-btn{
+        background-image: url('/static/images/pre.svg');
+    }
+    .next-btn{
+        background-image: url('/static/images/next.svg');
+    }
+    .page-box{
+        padding: 0 0.5em;
+        display: flex;
+        .page-item{
+            cursor: pointer;
+            height: 2rem;
+            width: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            background-color: #AAA;
+            margin: 0 0.2rem;
+        }
+        .cur-item{
+            cursor: pointer;
+            height: 2rem;
+            width: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+            background-color: aquamarine;
+            margin: 0 0.2rem;
+        }
+    }
+}

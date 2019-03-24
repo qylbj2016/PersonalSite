@@ -1,0 +1,25 @@
+.about-wrapper{
+    position: relative;
+    .bg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url('/static/images/about-bg.jpg');
+        background-size: 100% 100%;
+        opacity: .8;
+        z-index: -1;
+    }
+    .title{
+        width: 10rem;
+        font-size: 1.5rem;
+        margin: 2rem auto 0;
+        text-align: center;
+    }
+    .content{
+        padding: 2rem;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+}

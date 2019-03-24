@@ -1,0 +1,41 @@
+.articles-wrapper{
+    padding: 1.2em 0;
+    margin-top: 4vh;
+    position: relative;
+    .bg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url('/static/images/left-bg3.jpg');
+        background-size: 100% 100%;
+        opacity: .6;
+        z-index: -1;
+    }
+    .article-item{
+        font-size: 0.8vw;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5em;
+        display: flex;
+        cursor: pointer;
+            .num-box{
+                flex: 1;
+                color: red;
+            }
+            .title-box{
+                flex: 6;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .date-box{
+                flex: 3;
+                color: #999;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: clip;
+            }
+    }
+}

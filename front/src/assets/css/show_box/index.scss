@@ -1,0 +1,18 @@
+.show-wrapper{
+    width: 23%;
+    margin: 0 auto;
+    @media screen and (max-width: 825px) {
+        display: none;
+    }
+    .sticky-wrapper{
+        position: sticky;
+        top: 0;
+        .item-wrapper{
+            width: 100%;
+            max-width: 200px;
+            min-width: 100px;
+            font-size: 1.2vw;
+            box-shadow: 1px 1px 1px 1px #777;
+        }
+    }
+}

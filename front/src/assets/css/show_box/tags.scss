@@ -1,0 +1,28 @@
+.tags-wrapper{
+    padding: 2em 0;
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    .bg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: url('/static/images/left-bg2.jpg');
+        background-size: 100% 100%;
+        opacity: .6;
+        z-index: -1;
+    }
+    .tag-item{
+        font-size: 1rem;
+        box-shadow: 1px 1px 1px 1px #777;
+        margin-top: 1em;
+        text-align: center;
+        min-width: 3rem;
+        padding: 0.4em;
+        cursor: pointer;
+    }
+}

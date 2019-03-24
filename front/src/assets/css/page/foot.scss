@@ -1,0 +1,15 @@
+.foot-wrapper{
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    .date{
+        color: #666;
+        margin-right: 2rem;
+    }
+    .title{
+        color: red;
+    }
+}

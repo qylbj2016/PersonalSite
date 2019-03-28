@@ -1,15 +1,27 @@
-.foot-wrapper{
-    width: 100%;
-    position: relative;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    .date{
-        color: #666;
-        margin-right: 2rem;
-    }
-    .title{
-        color: red;
+footer{
+    .foot-wrapper{
+        width: 100%;
+        position: relative;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        .bg-line{
+            width: 100%;
+            height: 50px;
+            background-image: url('/static/images/nav-bg.jpg');
+            background-position: bottom;
+            background-size: 100% 500%;
+            position: absolute;
+            z-index: -1;
+            opacity: .6;
+        }
+        .date{
+            color: #666;
+            margin-right: 2rem;
+        }
+        .title{
+            color: red;
+        }
     }
 }

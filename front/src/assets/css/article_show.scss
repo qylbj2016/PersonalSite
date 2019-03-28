@@ -14,7 +14,7 @@
             margin-bottom: 1rem;
          }
         .title{
-            margin: 1rem 0;
+            margin: 2rem 0 1rem;
             font-size: 1.8rem;
             text-align: center;
             padding: 0.2em;
@@ -63,23 +63,55 @@
 
             }
         }
+        .img-box{
+            width: 80%;
+            margin: 2rem auto 0;
+            img{
+                width: 100%;
+            }
+        }
         .article{
             padding: 1em 3em;
-            margin-top: 2rem;
-            font-size: 1.2em;
-            line-height: 1.2em;
-            word-wrap: break-word;
-            height: 400px;
-            text-overflow: ellipsis;
+            font-size: 1.6rem;
+            height: 23rem;
             overflow: hidden;
+            div{
+               height: 20rem;
+               overflow: hidden;
+            }   
             @media screen and (max-width: 415px){
+                padding: 1em;
                 height: 300px;
             }
             @media screen and (max-width: 350px){
                 height: 200px;
             }
+            h3{
+                height: 2rem;
+                line-height: 2rem;
+                margin: 1rem 0;
+                font-size: 1.6rem;
+                font-weight: 500;
+                overflow: hidden;
+            }
+            h4{
+                height: 2rem;
+                line-height: 2rem;
+                font-size: 1.2rem;
+                font-weight: 400;
+                overflow: hidden;
+            }
+            p{
+                height: 2rem;
+                font-size: 1rem;
+                line-height: 2rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                
+            }
         }
         .details{
+            box-sizing: border-box;
             width: 5em;
             height: 3em;
             text-align: center;

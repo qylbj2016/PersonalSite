@@ -2,14 +2,15 @@ var express = require('express')
 var globalConfig = require('./config/config')
 var loader = require('./loader')
 var cors = require('cors')
+var history = require('connect-history-api-fallback')
 
-var app = new express();
+var app = new express()
 
-app.use(express.static('./public'))  // 配置静态资源
+app.use(history())
 
-app.use(cors({
-    // origin: ['http://localhost:8080']
-})) // cors设置
+app.use(express.static('../front/dist'))  // 配置静态资源
+
+app.use(cors()) 
 
 app.post('/getTags',loader.get('/getTags'))
 

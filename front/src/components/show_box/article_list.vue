@@ -19,7 +19,7 @@ export default {
   created () {
     this.axios({
       method: 'get',
-      url: 'http://localhost:8081/getHotArticles'
+      url: 'http://47.105.168.226:8081/getHotArticles'
     }).then(res => {
       this.articleList = res.data
     })
@@ -27,6 +27,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import '@/assets/css/show_box/article_list.scss';
 </style>

@@ -2,7 +2,7 @@
   <div class="title-wrapper">
     <router-link
       :to="{name: 'detail',
-          params: {type:item.tag, id: item.blog_id}}"
+      params: {type:item.tag, id: item.blog_id}}"
       class="title-item"
       v-for="item in curTitles"
       :key="item.id"
@@ -63,7 +63,7 @@ export default {
     getCurTitles (curType) {
       this.axios({
         method: 'get',
-        url: 'http://localhost:8081/getTitles?type=' + curType
+        url: 'http://47.105.168.226:8081/getTitles?type=' + curType
       }).then(result => {
         this.titleList = result.data
         this.curTitles = this.titleList.slice(0, 6)

@@ -1,10 +1,11 @@
 <template>
     <div class="foot-wrapper">
+        <div class="bg-line"></div>
         <div class="date">
             2019/3/10
         </div>
         <div class="title">
-            Camy's Site
+            Cinco's Site
         </div>
     </div>
 </template>

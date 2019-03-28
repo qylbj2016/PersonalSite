@@ -60,11 +60,9 @@
             }
         }
         .img-box{
-            box-sizing: border-box;
             width: 80%;
             padding: 0.5em;
-            margin: 0 auto 2em;
-            border: 1px solid #000;
+            margin: 2em auto;
             img{
                width: 100%;
                height: auto;
@@ -73,12 +71,28 @@
         .article{
             margin-top: 1rem;
             padding: 1em 3em;
-            font-size: 1.2em;
-            line-height: 1.2em;
-            word-wrap: break-word;
-            min-height: 400px;
-            text-overflow: ellipsis;
-            overflow: hidden;
+            h3{
+                display:block;
+                height: 3rem;
+                line-height: 3rem;
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin: 1rem 0;
+            }
+            h4{
+                display:block;
+                height: 2rem;
+                line-height: 2rem;
+                font-size: 1.4rem;
+                font-weight: 400;
+                margin: 1rem 0;
+            }
+            p{
+                display: inline-block;
+                height: 2rem;
+                font-size: 1.2rem;
+                line-height: 2rem;
+            }
         }
         .like-wrapper{
             width: 100%;

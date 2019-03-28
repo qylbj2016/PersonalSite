@@ -19,10 +19,9 @@ export default {
   created () {
     this.axios({
       method: 'post',
-      url: 'http://localhost:8081/getTags'
+      url: 'http://47.105.168.226:8081/getTags'
     }).then(result => {
       this.tags = result.data
-      console.log(this.tags)
     }
     ).catch(err =>
       console.log(err)
@@ -32,6 +31,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import '@/assets/css/show_box/tags.scss';
 </style>

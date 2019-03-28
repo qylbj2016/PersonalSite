@@ -1,9 +1,8 @@
 <template>
   <div id="app" class="wrapper">
-    <div class="bg"></div>
-    <div class="top-wrapper">
+    <header class="top-wrapper">
         <div class="bg-line"></div>
-        <div class="site">Camy's site</div>
+        <div class="site">Cinco's site</div>
         <ul class="nav-box">
           <router-link :to="{name: 'home'}" tag="li" class="nav-item">主页</router-link>
           <router-link :to="{name: 'article', params:{type: 'all'}}" tag="li" class="nav-item">文章</router-link>
@@ -17,12 +16,14 @@
           <router-link v-show="canShow" :to="{name: 'about'}" tag="li" class="menu-item">关于</router-link>
           <router-link v-show="canShow" :to="{name: 'comment'}" tag="li" class="menu-item">留言</router-link>
         </ul>
-    </div>
+    </header>
     <div class="body-wrapper">
       <show-box />
       <router-view class="router-view"/>
     </div>
-    <foot-box />
+    <footer>
+      <foot-box />
+    </footer>
   </div>
 </template>
 
@@ -43,7 +44,6 @@ export default {
   methods: {
     showMenu () {
       this.canShow = true
-      console.log(1)
     },
     hideMenu () {
       this.canShow = false
@@ -55,4 +55,5 @@ export default {
  @import './assets/css/public/init.scss';
  @import './assets/css/page/top.scss';
  @import './assets/css/page/body.scss';
+ @import './assets/css/page/foot.scss';
 </style>

@@ -26,8 +26,8 @@
                 阅读次数：{{article.views}}
             </div>
         </div>
-        <div v-if="article.imgSrc" class="img-box">
-            <img :src="article.imgSrc">
+        <div v-if="article.img_src" class="img-box">
+            <img :src="article.img_src">
         </div>
         <div class="article">
            <div v-html="article.content"></div>
@@ -60,7 +60,7 @@ export default {
         this.canDo = false
         this.axios({
           method: 'get',
-          url: 'http://localhost:8081/addLikes?blog_id=' + blogId
+          url: 'http://47.105.168.226:8081/addLikes?blog_id=' + blogId
         }).then(() => {
           this.likeNum++
           setTimeout(() => {
@@ -72,7 +72,7 @@ export default {
     getCurArticle (blogId) {
       this.axios({
         method: 'get',
-        url: 'http://localhost:8081/getArticles?id=' + blogId
+        url: 'http://47.105.168.226:8081/getArticles?id=' + blogId
       }).then(res => {
         this.article = res.data[0]
         this.likeNum = this.article.islike
@@ -81,7 +81,7 @@ export default {
     addViews (blogId) {
       return this.axios({
         method: 'get',
-        url: 'http://localhost:8081/addViews?blog_id=' + blogId
+        url: 'http://47.105.168.226:8081/addViews?blog_id=' + blogId
       })
     }
   },

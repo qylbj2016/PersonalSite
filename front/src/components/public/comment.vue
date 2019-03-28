@@ -4,7 +4,7 @@
       <div class="show-tip" v-if="curComments.length === 0">该文章目前还没有评论，快来抢沙发吧~</div>
       <div class="show-item" v-for="(item , index) in curComments" :key="item + index">
         <div class="info">
-          <img src="/static/images/head.JPG">
+          <img src="/static/images/visitor.jpg">
           <div class="info-detils">
             <div class="name">
               {{item.user_name}}
@@ -18,12 +18,12 @@
         </div>
         <div class="text">{{item.comment}}</div>
         <div class="reply-wrapper">
-          <div class="btn" @click="getInfo(item)">回复</div>
+          <div class="btn" @click="getInfo(item)"><a href="#write">回复</a></div>
         </div>
       </div>
       <toPage :dataLen="dataLen" @getCurIndex="getCurIndex"/>
     </div>
-    <div class="write-comments">
+    <div class="write-comments" id="write">
       <div class="reply">to: {{parentName}}</div>
       <textarea v-model="content"></textarea>
       <div class="input-wrapper">
@@ -53,7 +53,7 @@ export default {
   data () {
     return {
       parent: 0,
-      parentName: 'camy',
+      parentName: 'cinco',
       content: '',
       name: '',
       email: '',
@@ -89,7 +89,7 @@ export default {
       }
       return this.axios({
         method: 'get',
-        url: 'http://localhost:8081/getComments?bid=' + blogId
+        url: 'http://47.105.168.226:8081/getComments?bid=' + blogId
       }).then(res => {
         this.comments = res.data
         this.curComments = this.comments.slice(0, 6)
@@ -101,11 +101,10 @@ export default {
     },
     sendComment () {
       var canSend = this.checkFormat()
-      console.log(this.checkFormat())
       if (canSend === true) {
         this.axios({
           method: 'post',
-          url: 'http://localhost:8081/sendComment',
+          url: 'http://47.105.168.226:8081/sendComment',
           data: {
             blogId: this.blogId,
             name: this.name,
@@ -118,7 +117,7 @@ export default {
         }).then(res => {
           if (res.data == false) {
             this.parent = 0
-            this.parentName = null
+            this.parentName = 'cinco'
             this.getCurComments(this.blogId).then(() => {
               this.curIndex = Math.ceil(this.comments.length / 6)
             })
@@ -133,7 +132,7 @@ export default {
     checkEmail () {
       this.axios({
         method: 'post',
-        url: 'http://localhost:8081/checkVisitor',
+        url: 'http://47.105.168.226:8081/checkVisitor',
         data: {
           email: this.email
         }

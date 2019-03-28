@@ -1,9 +1,9 @@
 <template>
   <div class="article-box">
     <div class="article-item" v-for="item in curArticleList" :key="item.blog_id">
-      <div class="bg"></div>
-      <div class="title">{{item.title}}</div>
-      <div class="aritcle-info">
+        <div class="bg"></div>
+        <div class="title">{{item.title}}</div>
+        <div class="aritcle-info">
             <div class="info-item">
                 <img src="/static/images/info/cTime.svg" />
                 发表于 {{item.ctime}}
@@ -27,11 +27,12 @@
                 阅读次数：{{item.views}}
             </div>
         </div>
-      <div v-if="item.imgSrc" class="img-box">
-        <img :src="item.imgSrc">
+      <div v-if="item.img_src" class="img-box">
+        <img v-lazy="item.img_src">
       </div>
       <div class="article">
-          {{item.content}}
+          <div v-html="item.content"></div>
+          .....
       </div>
       <router-link class="details" :to="{name:'detail', params:{type: item.type , id: item.id}}">
         阅读全文
@@ -69,7 +70,7 @@ export default {
   created () {
     this.axios({
       method: 'get',
-      url: 'http://localhost:8081/getLikedArticles'
+      url: 'http://47.105.168.226:8081/getLikedArticles'
     }).then(res => {
       this.articleList = res.data
       this.curIndex = 1
@@ -78,6 +79,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import '@/assets/css/article_show.scss';
 </style>

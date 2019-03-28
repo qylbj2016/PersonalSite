@@ -4,7 +4,7 @@
     <div class="imgBox">
       <img src="/static/images/head.JPG">
     </div>
-    <div class="name">Camy</div>
+    <div class="name">Cinco</div>
     <div class="contact">
       <div class="contact-item" v-for="item in contactList" :key="item.name" >
         <a  :href="'https://' + item.number" target="_blank">

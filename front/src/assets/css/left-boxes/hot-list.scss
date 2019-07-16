@@ -1,0 +1,26 @@
+.articles-wrapper{
+    box-sizing: border-box;
+    padding: 1.2em 0;
+    margin-top: 4vh;
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 4px;
+    .article-item{
+        font-size: 0.8vw;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5em;
+        display: flex;
+        cursor: pointer;
+            .num-box{
+                flex: 1;
+                color: red;
+            }
+            .title-box{
+                flex: 5;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+    }
+}

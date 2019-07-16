@@ -1,17 +1,23 @@
 <template>
     <div class="home-wrapper">
-        <article-show />
+        <blogs />
     </div>
 </template>
 <script>
-import articleShow from '@/components/article_show.vue'
+import blogs from '@/components/home-blogs.vue'
+import home from '../../store/modules/home'
 export default {
+   async asyncData({store}){
+    if( ! store.state.home ){
+      store.registerModule("home", home)
+    } 
+    await store.dispatch('getLikeBlogs')
+  },
   components: {
-    articleShow
+    blogs
   }
 }
 </script>
-
 <style lang="scss">
-
+@import '@/assets/css/views/home.scss';
 </style>

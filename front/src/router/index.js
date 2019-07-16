@@ -3,17 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
+export default () => new Router({
   mode: 'history',
   routes: [
     {
       name: 'home',
       path: '/',
-      component: resolve => require(['@/views/Home.vue'], resolve)
-    },
-    {
-      name: 'home',
-      path: '/home',
       component: resolve => require(['@/views/Home.vue'], resolve)
     },
     {

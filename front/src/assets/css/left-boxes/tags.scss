@@ -1,0 +1,18 @@
+.tags-wrapper{
+    padding: 1em 0 2rem;
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 4px;
+    .tag-item{
+        font-size: 1rem;
+        margin-top: 1em;
+        text-align: center;
+        min-width: 3rem;
+        padding: 0.4em;
+        cursor: pointer;
+    }
+}

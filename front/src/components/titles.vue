@@ -4,7 +4,7 @@
       :to="{name: 'detail',
       params: {type:item.tag, id: item.blog_id}}"
       class="title-item"
-      v-for="item in curTitles"
+      v-for="item in titleList.slice(pre, next)"
       :key="item.id"
     >
       <img :src="imgSrc[item.tag]">
@@ -18,67 +18,55 @@
         </div>
       </div>
     </router-link>
-    <to-page :dataLen="dataLen" @getCurIndex="getCurIndex"/>
+    <page-turner :dataLen="dataLen" :limit="limit" @getCurIndex="getCurIndex"/>
   </div>
 </template>
 
 <script>
-import toPage from '@/components/public/to_page.vue'
+import pageTurner from '@/components/public/page-turner.vue'
+import title from '../../store/modules/title'
 export default {
+  async asyncData ({ store, route }) {
+    await store.dispatch('getCurTitles', route)
+  },
   components: {
-    toPage
+    pageTurner
   },
   data () {
     return {
-      titleList: [],
-      curTitles: [],
+      limit: 6,
       curIndex: 1,
       imgSrc: {
         js: '/static/images/type/js.svg',
         html: '/static/images/type/HTML5.svg',
         css: '/static/images/type/CSS3.svg',
         vue: '/static/images/type/Vue.svg',
-        else: '/static/images/type/else.svg'
+        react: '/static/images/type/React.svg',
+        pro: '/static/images/type/Pro.svg',
+        net: '/static/images/type/Net.svg',
+        server: '/static/images/type/Server.svg',
+        else: '/static/images/type/else.svg',
+        think: '/static/images/type/Think.svg'
       }
-
     }
   },
   computed: {
+    titleList () {
+      return this.$store.state.title.titleList
+    },
+    pre () {
+      return (this.curIndex - 1) * 6
+    },
+    next() {
+      return this.curIndex * 6
+    },
     dataLen () {
       return this.titleList.length
     }
   },
-  created () {
-    this.getCurTitles(this.$route.params.type)
-  },
   methods: {
     getCurIndex (newIndex) {
       this.curIndex = newIndex
-    },
-    updateCurList (newIndex) {
-      const pre = (this.curIndex - 1) * 6
-      const next = this.curIndex * 6
-      this.curTitles = this.titleList.slice(pre, next)
-    },
-    getCurTitles (curType) {
-      this.axios({
-        method: 'get',
-        url: 'http://47.105.168.226:8081/getTitles?type=' + curType
-      }).then(result => {
-        this.titleList = result.data
-        this.curTitles = this.titleList.slice(0, 6)
-      })
-    }
-  },
-  watch: {
-    $route (to, from) {
-      this.getCurTitles(to.params.type)
-    },
-    titleList () {
-      this.updateCurList(this.curIndex)
-    },
-    curIndex (newIndex) {
-      this.updateCurList(newIndex)
     }
   }
 }

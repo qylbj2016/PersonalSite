@@ -1,0 +1,66 @@
+.info-wrapper{
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 2em 0;
+    position: relative;
+    .imgBox{
+        position: relative;
+        margin: 0 auto 1.5rem;
+        width: 50%;
+        height: 0;
+        padding-top: 50%;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+    }
+    .name{
+        width: 100%;
+        color: #333;
+        font-size: .9em;
+        text-align: center;
+        line-height: .9em;
+        margin: .8rem auto 0;
+    }
+    .contact{
+        position: relative;
+        width: 80%;
+        margin: 1.5rem auto 0;
+        display: flex;
+        justify-content: space-around;
+        .contact-item{
+            padding: 0.2em;
+            cursor: pointer;
+            img{
+                height: 1.8em;
+                width: 1.8em;
+            }
+        }
+        .showNum{
+            cursor: pointer;
+            position: absolute;
+            display: flex;
+            background-color: #fff;
+            width: 100%;
+            left: 0;
+            height: 2em;
+            img{
+                height: 1.8em;
+                width: 1.8em;
+            }
+            .numBox{
+                width: 60%;
+                height: 1.8em;
+                font-size: 1em;
+                line-height: 1.8em;
+                padding-left: 0.2em;
+                color: red;
+            }
+        }
+    }
+
+}

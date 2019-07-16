@@ -1,0 +1,12 @@
+{
+    "apps": [
+      {
+        "name": "ssr-server",
+        "script": "./server.js"
+      },
+      {
+        "name": "data-server",
+        "script": "./bin/www"
+      }
+    ]
+}

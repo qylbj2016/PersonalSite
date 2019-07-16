@@ -1,0 +1,18 @@
+.login-wrapper{
+    background: linear-gradient(45deg, #dd3e54, #6be585);
+    &::after{
+        background: linear-gradient(45deg, #dd3e54, #6be585);
+    }
+    .tips{
+        width: 60%;
+        height: 2rem;
+        line-height: 2rem;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        span{
+            cursor: pointer;
+        }
+    }
+}

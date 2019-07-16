@@ -1,8 +1,5 @@
-var tagDao = require('../dao/tagDao')
+const tagDao = require('../model/tagDao')
 
-function tagService(response){
-    tagDao.getTags(response)
-}
-
+const tagService = () => tagDao.findAll()
 
 module.exports = tagService

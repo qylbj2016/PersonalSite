@@ -1,0 +1,24 @@
+.forget-wrapper{
+    background: linear-gradient(45deg, #005AA7, #FFFDE4);
+    &::after{
+        background: linear-gradient(45deg, #005AA7, #FFFDE4);
+    }
+    .sendCode{
+        display: flex;
+        margin: 1rem 0;
+        span{
+            flex: 1;
+        }
+        div{
+            background: linear-gradient(45deg, #E0EAFC, #CFDEF3);
+            flex: 4;
+            margin-right: 1.1rem;
+            text-align: center;
+            border-radius: 4px;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            cursor: pointer;
+        }
+    }
+
+}

@@ -1,24 +1,12 @@
-var commentDao = require('../dao/commentDao')
-var visitorDao = require('../dao/visitorDao')
+const commentDao = require('../model/commentDao')
 
-function getService(response, blog_id){
+const getComments = blog_id => commentDao.findByFilter(null, { blog_id })
 
-    commentDao.queryComment(response, blog_id)
-}
+const sendComment = params => commentDao.create( params )
 
-function sendService(response, data){
-    var data = JSON.parse( data.toString())
-    visitorDao.queryVisitor(response, data, function(res){
-        if( res == false ){
-            response.write('请您先验证邮箱')
-            response.end()
-        }else{
-            commentDao.insertComment( response, data )
-        }
-    })
-}
+const deleteComment = () => { }
 
 module.exports = {
-    getService,
-    sendService
+    getComments,
+    sendComment
 }

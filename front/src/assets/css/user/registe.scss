@@ -1,0 +1,25 @@
+.registe-wrapper{
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    &::after{
+        background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    }       
+    .sex-box{
+        display: flex;
+        margin: 1rem 0;
+        span{
+            &:first-of-type{
+                flex: 1
+            }
+            &:last-of-type{
+                flex: 4;
+            }
+        }
+        input{
+            margin-left: 1.2rem;
+            margin-right: .3rem;
+            &:first-of-type{
+                margin-left: 0;
+            }
+        }
+    }
+}

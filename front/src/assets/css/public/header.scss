@@ -1,0 +1,80 @@
+.wrapper{
+    width: 100%;
+    position: relative;
+    height: 4rem;
+    margin-top: .5rem;
+    .site{
+        position: absolute;
+        font-size: 2.5rem;
+        font-weight: 700;
+        left: 10%;
+        top: 50%;
+        text-shadow: #000 2px 1px 1px;
+        color: #EEE;
+        transform: translateY(-50%);
+        cursor: none;
+        @media screen and (max-width: 375px){
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+    .nav{
+        position: absolute;
+        right: 8%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        @media screen and (max-width: 600px){
+            display: none;
+        }
+        .nav-item{
+            font-size: 1.2rem;
+            text-shadow: #000 1px 1px .5px;
+            text-align: center;
+            line-height: 4rem;
+            width: 5rem;
+            height: 4rem;
+            color: #EEE;
+            cursor: pointer;
+            @media screen and (max-width: 1155px){
+                &:nth-child(1){
+                    display: none
+                } 
+            }
+            &:hover{
+                color: red;
+            }
+            }
+        }
+    .menu{
+        z-index: 100;
+        display: none;
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-40%);
+        @media screen and (max-width: 600px){ 
+            display: inline-block;
+        }
+        .icon{
+            width: 3rem;
+            height: 3rem;
+            background-image: url('/static/images/menu.svg');
+            background-size: 100% 100%;
+        }
+        .menu-item{
+            background: linear-gradient(45deg, #E0EAFC, #CFDEF3);
+            width: 3rem;
+            height: 1.5rem;
+            text-align: center;
+            line-height: 1.5rem;
+            margin-top: .2rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    }
+}

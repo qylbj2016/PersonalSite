@@ -28,7 +28,7 @@
     "mysql2": "^1.6.5",
     "nodemailer": "^6.2.1",
     "pug": "^2.0.0-rc.1",
-    "sequelize": "^5.8.6",
+    "sequelize": "^5.15.1",
     "vue": "^2.6.10",
     "vue-cookies": "^1.5.13",
     "vue-lazyload": "^1.2.6",
